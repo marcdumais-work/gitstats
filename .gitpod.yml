@@ -3,7 +3,7 @@ image:
 tasks:
 - init: git submodule init; git submodule update
   command: >
-    cp .mailmap ./theia &
-    ./gitstats ./theia /tmp/stats &
-    gp open /tmp/stats/index.html
-    yarn --cwd examples/browser start ../.. --hostname=0.0.0.0
+    cp .mailmap ./theia &&
+    ./gitstats ./theia ./repo-stats &&
+    gp open .gitpod.yml &&
+    gp preview file:///workspace/gitstats/repo-stats/authors.html
