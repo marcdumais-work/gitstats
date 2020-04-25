@@ -4,6 +4,7 @@ tasks:
 - init: git submodule init; git submodule update
   command: >
     cp .mailmap ./theia &&
+    cd theia; git pull origin master; cd .. &&
     ./gitstats ./theia ./repo-stats &&
     gp open .gitpod.yml &&
     gp preview file:///workspace/gitstats/repo-stats/authors.html
